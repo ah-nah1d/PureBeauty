@@ -22,9 +22,8 @@ function NavBar() {
     }
 
     return (
-        <nav className="text-black">
-        <div className="hidden md:flex flex-col px-4 py-2 ">
-            <div className="flex p-2">
+        <nav className="text-black shadow-md">
+            <div className="flex p-4">
                 <div className="flex-1 text-xl font-bold">PureBeauty</div>
                 <div className="flex-1 flex justify-center"><Search /></div>
                 <div className="flex-1 flex justify-end space-x-4 items-center">
@@ -47,12 +46,12 @@ function NavBar() {
                     
                             {isOpen && (
                             <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-20">
-                                <a
-                                href="/profile"
+                                <Link
+                                to="/profile"
                                 className="block px-4 py-2 shadow text-gray-800 hover:bg-gray-100"
                                 >
                                 Profile
-                                </a>
+                                </Link>
                                 <button
                                 onClick={logoutHandler}
                                 className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-100"
@@ -74,14 +73,6 @@ function NavBar() {
                     )}
                 </div>
             </div>
-            <div className="flex justify-center">
-            <div className="flex space-x-4">
-                <a href="#" className="hover:text-gray-400">Men</a>
-                <a href="#" className="hover:text-gray-400">Women</a>
-                <a href="#" className="hover:text-gray-400">Child</a>
-            </div>
-            </div>
-        </div>
         </nav>
     );
 }
