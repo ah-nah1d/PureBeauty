@@ -16,7 +16,7 @@ function Header() {
     }, [dispatch]);
 
     return (
-        <div className="bg-gray-100 rounded-lg shadow-md">
+        <div className="bg-gray-100 p-1 shadow-md">
             {loading && <Loader />}
             {headers.length > 0 ? (
                 <div className="text-center">
