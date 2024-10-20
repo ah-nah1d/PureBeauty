@@ -1,23 +1,20 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
-import Header from './Component/Header'
-import NavBar from './Component/NavBar'
 
 import Home from './Screens/Public/Home';
+import Login from './Screens/Public/Login';
+import Register from './Screens/Public/Register';
 
 
 function App() {
     return (
         <Router>
-        <Header/>
-        <NavBar/>
-
-        <main className='py-3'>
             <Routes>
                 <Route path='/' element={<Home/>} exact/>
+                <Route path='/login' element={<Login/>} />
+                <Route path='/register' element={<Register/>} />
             </Routes>
-        </main>
         </Router>
     );
 }
