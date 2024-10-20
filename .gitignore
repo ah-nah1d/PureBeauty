@@ -1,0 +1,112 @@
+# Node modules (Frontend)
+frontend/node_modules/
+
+# Vite build output (Frontend)
+frontend/dist/
+frontend/.vite/
+
+# Environment variables (Frontend)
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# Logs (Frontend)
+frontend/logs/
+*.log
+
+# Temporary files (Frontend)
+frontend/*.tmp
+
+# Custom build artifacts (Frontend)
+frontend/build/
+
+# Editor specific files (Frontend)
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS specific files (Frontend)
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+desktop.ini
+
+# Compiled source (Frontend)
+frontend/build/
+frontend/lib/
+frontend/dist/
+frontend/*.map
+
+# Misc (Frontend)
+*.tgz
+*.gz
+*.zip
+*.tar
+*.rar
+
+# Coverage directory used by tools like Istanbul (Frontend)
+coverage/
+
+# Jest test coverage (Frontend)
+coverage/
+
+# TypeScript cache (Frontend)
+*.tsbuildinfo
+
+# Yarn Integrity file (Frontend)
+.yarn-integrity
+
+# Django specific (Backend)
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+/myenv/
+venv/
+env/
+.env
+
+# Django logs and database files
+*.log
+*.sqlite3
+*.db
+*.dump
+*.pot
+*.pyc
+*.egg-info/
+dist/
+build/
+
+# Coverage files (Backend)
+.coverage
+coverage.xml
+htmlcov/
+*.cover
+
+# Temporary files (Backend)
+*.tmp
+
+# OS specific files (Backend)
+.DS_Store
+Thumbs.db
+
+# Static files (Backend)
+staticfiles/
+media/
+
+# Local settings (Backend)
+local_settings.py
+
+# Environment variables (Backend)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
