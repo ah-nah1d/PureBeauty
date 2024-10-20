@@ -2,13 +2,15 @@ import React from 'react'
 import { FaSearch } from 'react-icons/fa'
 function Search() {
     return (
-        <div className="relative border border-gray-300 rounded-full bg-gray-300" >
+        <div className="relative border border-gray-300 rounded-full" >
             <input
                 type="text"
                 placeholder="Search..."
-                className="border rounded-l-full border-gray-300 px-4 py-1  w-5/6"
+                className="border rounded-full border-gray-300 px-4 py-2"
             />
-            <button><FaSearch className=" absolute right-4 top-1/2 transform -translate-y-1/2 text-slate-600" /></button>
+            <button >
+                <FaSearch className=" absolute rounded-full p-1.5 right-2 top-1/2 text-3xl transform -translate-y-1/2 text-white bg-black" />
+            </button>
         </div>
     )
 }

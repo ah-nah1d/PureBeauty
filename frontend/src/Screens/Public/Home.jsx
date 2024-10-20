@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import { useDispatch,useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link'; 
 
 import {FaChevronDown } from 'react-icons/fa';
 
@@ -9,6 +10,9 @@ import Header from '../../Component/Header'
 import NavBar from '../../Component/NavBar'
 import Loader from '../../Component/Loader'
 import Message from '../../Component/Message'
+import BestDeals from '../../Component/BestDeals'
+import AvailableItems from '../../Component/AvailableItems'
+import NewCollections from '../../Component/NewCollections'
 
 import { listCategories } from '../../Actions/ProductActions'
 
@@ -31,9 +35,9 @@ function Home() {
             <Header/>
             <NavBar/>
             <div className="p-4 flex gap-4">
-                <div>Best Deals</div>
-                <div>New Collections</div>
-                <div>Available Items</div>
+                <HashLink smooth to="#best-deals" className="text-black px-4">Best Deals</HashLink>
+                <HashLink smooth to="#new-collections" className="text-black px-4">New Collections</HashLink>
+                <HashLink smooth to="#available-items" className="text-black px-4">Available Items</HashLink>
                 <div className="relative">
                     <button
                         title='Category'
@@ -47,7 +51,7 @@ function Home() {
                     </button>
             
                     {isOpen && (
-                        <div className='border rounded-xl'>
+                        <div className='absolute mt-2 bg-white border rounded-md shadow-lg z-20'>
                             {loading ? <Loader /> : error ? <Message variant='error'>{error}</Message>: (
                                 categories.map((category) => (
                                     <div className="right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-20">
@@ -62,7 +66,18 @@ function Home() {
                             )}
                         </div> 
                     )}
-                        </div>
+                </div>
+            </div>
+            <div className='flex-row'> 
+                <section id="best-deals">
+                    <BestDeals />
+                </section>
+                <section id="new-collections">
+                    <NewCollections />
+                </section>
+                <section id="available-items">
+                    <AvailableItems />
+                </section>
             </div>
         </>
     )
