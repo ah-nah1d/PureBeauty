@@ -1,10 +1,11 @@
 import { legacy_createStore, combineReducers, applyMiddleware } from 'redux';
 import {thunk} from 'redux-thunk';
 import { composeWithDevTools } from '@redux-devtools/extension';
+import { headerReducer } from './Reducers/WebsiteReducer'
 
 
 const reducer=combineReducers({
-
+    header: headerReducer,
 })
 
 const initialState = {
