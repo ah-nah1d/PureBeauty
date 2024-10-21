@@ -12,7 +12,6 @@ class Header(models.Model):
 
 class AboutUs(models.Model):
     title =models.TextField(null=True,blank=True,max_length=250)
-    # isActive=models.BooleanField(default=False)
 
     def __str__(self):
         return str(self.title)

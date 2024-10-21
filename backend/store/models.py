@@ -5,8 +5,18 @@ from django.forms import ValidationError
 class Category(models.Model):
     name = models.CharField(max_length=250, null=True, blank=True)
     banner = models.ImageField(null=True, blank=True, default='/placeholder.png')
+    is_featured = models.BooleanField(default=False) 
+
     def __str__(self):
         return self.name
+
+class FeaturedHome(models.Model):
+    featured_category = models.ManyToManyField(Category)
+    discountImage = models.ImageField(null=True, blank=True, default='/placeholder.png')
+    discountAmmount = models.PositiveIntegerField(null=True, blank=True)
+
+    def __str__(self):
+        return self.category.name
     
 class Product(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True) 
@@ -41,14 +51,7 @@ class Order(models.Model):
         return str(self.createdAt)
     
     
-class FeaturedHome(models.Model):
-    category = models.ManyToManyField(Category)
-    is_active = models.BooleanField(default=True)
-    discountImage = models.ImageField(null=True, blank=True, default='/placeholder.png')
-    discountAmmount = models.PositiveIntegerField(null=True, blank=True)
 
-    def __str__(self):
-        return self.category.name
 
 class OrderItem(models.Model):
     product = models.ForeignKey(Product,on_delete=models.SET_NULL,null=True) 
