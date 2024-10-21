@@ -79,7 +79,7 @@ function Footer() {
                 {loadingContact && <Loader />}
                 {contacts.length > 0 ? (
                     contacts.map((contact) => (
-                        <>
+                        <div key={contact.id}>
                             <div className="flex mb-3 items-center">
                                 <FaMapMarkerAlt className="text-gray-700 mr-2" size={15} />
                                 <span className="text-gray-700">Location: {contact.address}</span>
@@ -92,7 +92,7 @@ function Footer() {
                                 <FaEnvelope className="text-gray-700 mr-2" size={15} />
                                 <span className="text-gray-700">Email: {contact.email}</span>
                             </div>
-                        </>
+                        </div>
                     ))
                     
                 ): (
