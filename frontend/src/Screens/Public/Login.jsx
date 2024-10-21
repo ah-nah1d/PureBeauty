@@ -7,6 +7,7 @@ import { useDispatch,useSelector } from 'react-redux'
 import { login } from '../../Actions/UserActions'
 
 import NavBar from '../../Component/NavBar'
+import Footer from '../../Component/Footer'
 import Loader from '../../Component/Loader'
 import Message from '../../Component/Message'
 
@@ -30,7 +31,7 @@ function Login() {
         dispatch(login(email,password))
     }
     return (
-        <div className="h-screen flex flex-col bg-gradient-to-br from-gray-100 to-gray-300">
+        <div className="h-screen flex flex-col">
             <div className="h-[15%]">
                 <NavBar />
             </div>
@@ -89,7 +90,7 @@ function Login() {
                 </div>
             </div>
             <div className="h-[25%]">
-                {/* <Footer /> */}
+                <Footer/>
             </div>
             </div>
     )

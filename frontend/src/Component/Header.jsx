@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchHeaders } from '../Actions/WebsiteActions'; 
 
 import Loader from './Loader'
-import Message from './Message'
 
 function Header() {
     const dispatch = useDispatch();

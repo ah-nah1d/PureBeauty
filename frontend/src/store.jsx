@@ -2,7 +2,10 @@ import { legacy_createStore, combineReducers, applyMiddleware } from 'redux';
 import {thunk} from 'redux-thunk';
 import { composeWithDevTools } from '@redux-devtools/extension';
 import {
-    headerReducer
+    headerReducer,
+    aboutReducer,
+    socialReducer,
+    contactReducer,
 } from './Reducers/WebsiteReducer'
 import {  
     userLoginReducer,
@@ -15,6 +18,9 @@ import {
 
 const reducer=combineReducers({
     header: headerReducer,
+    about: aboutReducer,
+    social: socialReducer,
+    contact:contactReducer,
 
     userLogin:userLoginReducer,
     userRegister:userRegisterReducer,

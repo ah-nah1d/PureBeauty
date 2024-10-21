@@ -2,7 +2,7 @@ import React from 'react'
 
 function BestDeals() {
   return (
-    <div className='w-screen h-screen px-20 flex flex-row'>
+    <div className='w-full h-screen px-20 flex flex-row'>
         <div className='w-1/3'>
             sale
         </div>

@@ -17,9 +17,9 @@ class AboutUs(models.Model):
         return str(self.title)
     
 class SocialMedia(models.Model):
-    title =models.TextField(null=True,blank=True,max_length=250)
+    title =models.CharField(null=True,blank=True,max_length=250)
     icons = models.ImageField(null=True, blank=True, default='/placeholder.png')
-    link =models.TextField(null=True,blank=True,max_length=250)
+    link =models.CharField(null=True,blank=True,max_length=250)
     isActive=models.BooleanField(default=False)
     def __str__(self):
         return str(self.title)

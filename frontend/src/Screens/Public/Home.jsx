@@ -13,6 +13,7 @@ import Message from '../../Component/Message'
 import BestDeals from '../../Component/BestDeals'
 import AvailableItems from '../../Component/AvailableItems'
 import NewCollections from '../../Component/NewCollections'
+import Footer from '../../Component/Footer'
 
 import { listCategories } from '../../Actions/ProductActions'
 
@@ -79,6 +80,7 @@ function Home() {
                     <AvailableItems />
                 </section>
             </div>
+            <Footer/>
         </>
     )
 }
