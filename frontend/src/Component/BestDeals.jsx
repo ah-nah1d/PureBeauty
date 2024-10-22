@@ -1,12 +1,12 @@
 import React,{useState,useEffect} from 'react'
 import { useDispatch,useSelector } from 'react-redux'
-import { Link } from 'react-router-dom';
 import { MdArrowOutward,MdArrowForward } from "react-icons/md";
 
 
 import Loader from './Loader'
 
 import { FeaturedItems } from '../Actions/ProductActions'
+import ScrollLink from './ScrollLink'
 
 function BestDeals() {
     const dispatch =useDispatch()
@@ -38,7 +38,9 @@ function BestDeals() {
                         <span className="absolute bottom-0 left-0 m-10 text-white  m-5 pb-0">
                             <div className='text-3xl items-center'>Special Offer</div>
                             <div className="text-6xl items-center">{featured_homes[0].discountName} Sale</div>
-                            <button className="text-2xl py-3 px-5 text-white rounded-full items-center bg-black">Shop Now</button>
+                            <div className='flex text-2xl py-3 text-white rounded-full justify-center bg-black inline-flex'>
+                                <ScrollLink to='/Sale' className="mx-5 items-center">Shop Now</ScrollLink>
+                            </div>
                         </span>
                     </>
                 )}
@@ -56,9 +58,11 @@ function BestDeals() {
                             <div className='text-4xl items-center'>Exquisite</div>
                             <div className="text-4xl items-center">Hair Solutions</div>
                         </span>
-                        <span className="absolute bottom-0 right-0 mx-20 my-16  text-white">
+                        <ScrollLink
+                            to={`/category/${featured_categories[1].id}/${featured_categories[1].name.replace(/\s+/g, '-')}`}
+                            className="absolute bottom-0 right-0 mx-20 my-16  text-white">
                             <MdArrowOutward className="text-4xl justify-cnter items-center"/>
-                        </span>
+                        </ScrollLink>
                     </>
                 )}
             </div>
@@ -73,7 +77,11 @@ function BestDeals() {
                         />
                         <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-20 p-4  flex justify-between items-center">
                             <div className="font-bold text-white text-2xl">Discover Glow</div>
-                            <MdArrowOutward className="text-2xl text-white" />
+                            <ScrollLink
+                                to={`/category/${featured_categories[2].id}/${featured_categories[2].name.replace(/\s+/g, '-')}`}
+                            >
+                                <MdArrowOutward className="text-4xl text-white justify-cnter items-center"/>
+                            </ScrollLink>
                         </div>
 
                     </>
@@ -90,7 +98,11 @@ function BestDeals() {
                         />
                         <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-20 p-4  flex justify-between items-center">
                             <div className="font-bold text-white text-2xl">Skin Radiance</div>
-                            <MdArrowOutward className="text-2xl text-white" />
+                            <ScrollLink
+                                to={`/category/${featured_categories[3].id}/${featured_categories[3].name.replace(/\s+/g, '-')}`}
+                            >
+                                <MdArrowOutward className="text-4xl text-white justify-cnter items-center"/>
+                            </ScrollLink>
                         </div>
                     </>
                 )}
@@ -101,15 +113,17 @@ function BestDeals() {
                     <>
                         <img 
                             src={`http://127.0.0.1:8000/${featured_categories[0].banner}`} 
-                            alt={featured_categories[2].id}
+                            alt={featured_categories[0].id}
                             className="w-full h-full rounded-3xl object-cover" 
                         />
                         <span className="absolute bottom-0 left-0 mx-8 my-10 text-white ">
                             <div className='text-3xl items-center'>Sublime Mehedi Collection</div>
                         </span>
-                        <span className="absolute bottom-0 right-0 mx-8 my-10  text-white">
-                            <MdArrowOutward className="text-3xl justify-cnter items-center"/>
-                        </span>
+                        <ScrollLink
+                            to={`/category/${featured_categories[0].id}/${featured_categories[0].name.replace(/\s+/g, '-')}`}
+                            className="absolute bottom-0 right-0 mx-16 my-10  text-white">
+                            <MdArrowOutward className="text-4xl justify-cnter items-center"/>
+                        </ScrollLink>
                     </>
                 )}
             </div>
@@ -117,9 +131,9 @@ function BestDeals() {
                 {loading && <Loader />}
                 {featured_categories.length > 0 && (
                     <>
-                        <div className='text-3xl font-bold pt-7'>New Collection This week</div>
+                        <div className='text-3xl font-bold pt-7'>New Collection This Season</div>
                         <div className='text-sm pt-3 pb-9 text-slate-500 '>Look out for this season's exclusives and new addition pieces you'll love throughout the coming seasons.</div>
-                        <Link to='/products' className="text-xl p-3 flex text-Black border-2 border-black rounded-full items-center ">View All Collections<MdArrowForward/></Link>
+                        <ScrollLink to='/products' className="text-xl p-3 flex text-Black border-2 border-black rounded-full items-center ">View All Collections<MdArrowForward/></ScrollLink>
                     </>
                 )}
             </div>

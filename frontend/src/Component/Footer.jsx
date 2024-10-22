@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'; 
-import { Link,useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 
 import { fetchAbout,fetchSocial,fetchContact } from '../Actions/WebsiteActions';
 
 
 import Loader from './Loader'
+import ScrollLink from './ScrollLink'
 
 function Footer() {
     const dispatch = useDispatch();
@@ -69,9 +70,9 @@ function Footer() {
             <div className='w-1/5'>
                 <h1 className="text-4xl font-bold mb-4">Quick Links</h1>
                 <ul>
-                    <li><Link to="/" className="text-lg text-gray-700 hover:text-gray-900">Home</Link></li>
-                    <li><Link to="/about" className="text-lg text-gray-700 hover:text-gray-900">About Us</Link></li>
-                    <li><Link to="/contact" className="text-lg text-gray-700 hover:text-gray-900">Contact Us</Link></li>
+                    <li><ScrollLink to="/" className="text-lg text-gray-700 hover:text-gray-900">Home</ScrollLink></li>
+                    <li><ScrollLink to="/about" className="text-lg text-gray-700 hover:text-gray-900">About Us</ScrollLink></li>
+                    <li><ScrollLink to="/contact" className="text-lg text-gray-700 hover:text-gray-900">Contact Us</ScrollLink></li>
                 </ul>
             </div>
             <div className='w-1/5'>

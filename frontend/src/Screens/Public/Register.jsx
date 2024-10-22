@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import { Link,useNavigate,useLocation } from 'react-router-dom';
+import { useNavigate,useLocation } from 'react-router-dom';
 import { useDispatch,useSelector } from 'react-redux'
 
 
@@ -9,6 +9,7 @@ import { register } from '../../Actions/UserActions'
 import NavBar from '../../Component/NavBar'
 import Footer from '../../Component/Footer'
 import Loader from '../../Component/Loader'
+import ScrollLink from '../../Component/ScrollLink'
 import Message from '../../Component/Message'
 
 function Register() {
@@ -125,9 +126,9 @@ function Register() {
                 <div className="mt-4 text-center">
                     <p className="text-gray-700">
                         Already have an account?{' '}
-                        <Link to="/login" className="text-blue-500 font-semibold hover:underline">
+                        <ScrollLink to="/login" className="text-blue-500 font-semibold hover:underline">
                         Click here to login
-                        </Link>
+                        </ScrollLink>
                     </p>
                 </div>
             </div>

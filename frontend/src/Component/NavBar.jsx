@@ -1,11 +1,11 @@
 import React,{useState} from 'react';
 import { useDispatch,useSelector } from 'react-redux'
 import { FaShoppingCart, FaUser, FaUserShield,FaChevronDown } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 
 import Search from './Search'
 
 import { logout } from '../Actions/UserActions'
+import ScrollLink from './ScrollLink'
 
 function NavBar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -24,7 +24,7 @@ function NavBar() {
     return (
         <nav className="text-black shadow-md px-20">
             <div className="flex p-4">
-                <div className="flex-1 text-xl font-bold">PureBeauty</div>
+                <ScrollLink to='/' className="flex-1 text-xl font-bold">PureBeauty</ScrollLink>
                 <div className="flex-1 flex justify-center"><Search /></div>
                 <div className="flex-1 flex justify-end space-x-4 items-center">
                     <div className="flex items-center">
@@ -46,12 +46,12 @@ function NavBar() {
                     
                             {isOpen && (
                             <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-20">
-                                <Link
+                                <ScrollLink
                                 to="/profile"
                                 className="block px-4 py-2 shadow text-gray-800 hover:bg-gray-100"
                                 >
                                 Profile
-                                </Link>
+                                </ScrollLink>
                                 <button
                                 onClick={logoutHandler}
                                 className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-100"
@@ -62,14 +62,14 @@ function NavBar() {
                             )}
                         </div>
                     ):(
-                        <Link to="/login" className="flex items-center">
+                        <ScrollLink to="/login" className="flex items-center">
                             <FaUser /> <span className="ml-1">Login</span>
-                        </Link>
+                        </ScrollLink>
                     )}
                     {userInfo && userInfo.isAdmin && (
-                        <Link to="/admin" className="flex items-center">
+                        <ScrollLink to="/admin" className="flex items-center">
                         <FaUserShield /> <span className="ml-1">Admin</span>
-                        </Link>
+                        </ScrollLink>
                     )}
                 </div>
             </div>

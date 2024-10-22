@@ -1,6 +1,5 @@
 import React,{useState,useEffect} from 'react'
 import { useDispatch,useSelector } from 'react-redux'
-import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link'; 
 
 import {FaChevronDown } from 'react-icons/fa';
@@ -11,8 +10,8 @@ import NavBar from '../../Component/NavBar'
 import Loader from '../../Component/Loader'
 import Message from '../../Component/Message'
 import BestDeals from '../../Component/BestDeals'
-import AvailableItems from '../../Component/AvailableItems'
 import NewCollections from '../../Component/NewCollections'
+import ScrollLink from '../../Component/ScrollLink'
 import Footer from '../../Component/Footer'
 
 import { listCategories } from '../../Actions/ProductActions'
@@ -38,7 +37,6 @@ function Home() {
             <div className="py-4 px-40 flex gap-4">
                 <HashLink smooth id='best-deals' to="#best-deals" className="text-black px-4">Best Deals</HashLink>
                 <HashLink smooth to="#new-collections" className="text-black px-4">New Collections</HashLink>
-                <HashLink smooth to="#available-items" className="text-black px-4">Available Items</HashLink>
                 <div className="relative">
                     <button
                         title='Category'
@@ -56,12 +54,12 @@ function Home() {
                             {loading ? <Loader /> : error ? <Message variant='error'>{error}</Message>: (
                                 categories.map((category) => (
                                     <div className="right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-20">
-                                        <Link to = {`/product/${category.name.replace(/\s+/g, '-')}`}
+                                        <ScrollLink to = {`/category/${category.id}/${category.name.replace(/\s+/g, '-')}`}
                                             key={category.id}
                                             className="block px-4 py-2 shadow text-gray-800 hover:	"
                                         >
                                             {category.name}
-                                        </Link>
+                                        </ScrollLink>
                                     </div>
                                 ))
                             )}
@@ -75,9 +73,6 @@ function Home() {
                 </section>
                 <section id="new-collections">
                     <NewCollections />
-                </section>
-                <section id="available-items">
-                    <AvailableItems />
                 </section>
             </div>
             <Footer/>

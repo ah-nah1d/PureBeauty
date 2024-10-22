@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import { Link,useNavigate,useLocation } from 'react-router-dom';
+import { useNavigate,useLocation } from 'react-router-dom';
 import { useDispatch,useSelector } from 'react-redux'
 
 
@@ -8,6 +8,7 @@ import { login } from '../../Actions/UserActions'
 
 import NavBar from '../../Component/NavBar'
 import Footer from '../../Component/Footer'
+import ScrollLink from '../../Component/ScrollLink'
 import Loader from '../../Component/Loader'
 import Message from '../../Component/Message'
 
@@ -83,9 +84,9 @@ function Login() {
                 <div className="mt-4 text-center">
                     <p className="text-gray-700">
                         New to PureBeauty?{' '}
-                        <Link to="/register" className="text-blue-500 font-semibold hover:underline">
+                        <ScrollLink to="/register" className="text-blue-500 font-semibold hover:underline">
                         Create an account
-                        </Link>
+                        </ScrollLink>
                     </p>
                 </div>
             </div>
