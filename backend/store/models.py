@@ -11,12 +11,9 @@ class Category(models.Model):
         return self.name
 
 class FeaturedHome(models.Model):
-    featured_category = models.ManyToManyField(Category)
     discountImage = models.ImageField(null=True, blank=True, default='/placeholder.png')
+    discountName = models.CharField(max_length=250, null=True, blank=True)
     discountAmmount = models.PositiveIntegerField(null=True, blank=True)
-
-    def __str__(self):
-        return self.category.name
     
 class Product(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True) 
@@ -31,6 +28,7 @@ class Product(models.Model):
     countInStock = models.IntegerField(null=True, blank=True, default=0)
     createdAt = models.DateTimeField(auto_now_add=True)
     isFeatured = models.BooleanField(default=False)
+    onSale = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

@@ -22,7 +22,7 @@ function NavBar() {
     }
 
     return (
-        <nav className="text-black shadow-md">
+        <nav className="text-black shadow-md px-20">
             <div className="flex p-4">
                 <div className="flex-1 text-xl font-bold">PureBeauty</div>
                 <div className="flex-1 flex justify-center"><Search /></div>
@@ -78,3 +78,9 @@ function NavBar() {
 }
 
 export default NavBar;
+
+<>
+                        <div className='text-3xl'>New Collection This week</div>
+                        <div className='text-sm text-slate-500 py-3'>Look out for this season's exclusives and new addition pieces you'll love throughout the coming seasons.</div>
+                        <button> View All Collections</button>
+                    </>

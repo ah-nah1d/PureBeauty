@@ -21,8 +21,8 @@ function Home() {
     const [isOpen, setIsOpen] = useState(false);
     const dispatch =useDispatch()
     
-    const CategoryList = useSelector((state) => state.CategoryList);
-    const { loading, error, categories } = CategoryList;
+    const categoryList = useSelector((state) => state.categoryList);
+    const { loading, error, categories } = categoryList;
 
     useEffect(() => {
         dispatch(listCategories());
@@ -35,8 +35,8 @@ function Home() {
         <>
             <Header/>
             <NavBar/>
-            <div className="p-4 flex gap-4">
-                <HashLink smooth to="#best-deals" className="text-black px-4">Best Deals</HashLink>
+            <div className="py-4 px-40 flex gap-4">
+                <HashLink smooth id='best-deals' to="#best-deals" className="text-black px-4">Best Deals</HashLink>
                 <HashLink smooth to="#new-collections" className="text-black px-4">New Collections</HashLink>
                 <HashLink smooth to="#available-items" className="text-black px-4">Available Items</HashLink>
                 <div className="relative">
@@ -70,7 +70,7 @@ function Home() {
                 </div>
             </div>
             <div className='flex-row'> 
-                <section id="best-deals">
+                <section >
                     <BestDeals />
                 </section>
                 <section id="new-collections">

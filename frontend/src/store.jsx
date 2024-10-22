@@ -12,7 +12,8 @@ import {
     userRegisterReducer,
 } from './Reducers/UserReducer'
 import {  
-    CategoryListReducer
+    CategoryListReducer,
+    FeaturedItemsReducer,
 } from './Reducers/ProductReducer'
 
 
@@ -25,7 +26,8 @@ const reducer=combineReducers({
     userLogin:userLoginReducer,
     userRegister:userRegisterReducer,
 
-    CategoryList:CategoryListReducer,
+    categoryList:CategoryListReducer,
+    featuredItems:FeaturedItemsReducer,
 })
 
 const userInfoFromStorage =localStorage.getItem('userInfo')?

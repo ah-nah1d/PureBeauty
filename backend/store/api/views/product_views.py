@@ -24,3 +24,16 @@ def getProducts(request):
 
     serializer =ProductSerializer(products,many=True)
     return Response({'products':serializer.data})
+
+@api_view(['GET'])
+def getFeaturedItems(request):
+    featured_homes = FeaturedHome.objects.all()
+    featured_categories = Category.objects.filter(is_featured=True)
+    featured_homes_data = FeaturedHomeSerializer(featured_homes, many=True).data
+    featured_categories_data = CategorySerializer(featured_categories, many=True).data
+    response_data = {
+        'featured_homes': featured_homes_data,
+        'featured_categories': featured_categories_data,
+    }
+
+    return Response({'featuredItem': response_data})

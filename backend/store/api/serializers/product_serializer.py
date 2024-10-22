@@ -6,6 +6,11 @@ class CategorySerializer(serializers.ModelSerializer):
         model = Category
         fields = '__all__'
 
+class FeaturedHomeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FeaturedHome
+        fields = '__all__'
+
 class ProductSerializer(serializers.ModelSerializer):
     reviews = serializers.SerializerMethodField(read_only=True)
     class Meta:
