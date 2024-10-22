@@ -71,11 +71,13 @@ function Home() {
                 <section >
                     <BestDeals />
                 </section>
-                <section id="new-collections">
+                <section style={{ marginTop: '-180px' }} id="new-collections">
                     <NewCollections />
                 </section>
             </div>
-            <Footer/>
+            <div className='border' style={{ marginTop: '-180px' }}>
+                <Footer/>
+            </div>
         </>
     )
 }
