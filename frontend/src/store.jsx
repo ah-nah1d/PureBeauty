@@ -14,6 +14,7 @@ import {
 import {  
     CategoryListReducer,
     FeaturedItemsReducer,
+    productListReducer,
 } from './Reducers/ProductReducer'
 
 
@@ -28,6 +29,7 @@ const reducer=combineReducers({
 
     categoryList:CategoryListReducer,
     featuredItems:FeaturedItemsReducer,
+    productList:productListReducer,
 })
 
 const userInfoFromStorage =localStorage.getItem('userInfo')?

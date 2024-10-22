@@ -119,7 +119,7 @@ function BestDeals() {
                     <>
                         <div className='text-3xl font-bold pt-7'>New Collection This week</div>
                         <div className='text-sm pt-3 pb-9 text-slate-500 '>Look out for this season's exclusives and new addition pieces you'll love throughout the coming seasons.</div>
-                        <button className="text-xl p-3 flex text-Black border-2 border-black rounded-full items-center ">View All Collections<MdArrowForward/></button>
+                        <Link to='/products' className="text-xl p-3 flex text-Black border-2 border-black rounded-full items-center ">View All Collections<MdArrowForward/></Link>
                     </>
                 )}
             </div>

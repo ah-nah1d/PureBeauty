@@ -7,6 +7,10 @@ import {
     FEATURED_ITEMS_REQUEST,
     FEATURED_ITEMS_SUCCESS,
     FEATURED_ITEMS_FAIL,
+
+    PRODUCT_LIST_REQUEST,
+    PRODUCT_LIST_SUCCESS,
+    PRODUCT_LIST_FAIL,
 } from '../Constants/ProductConstants';
 
 export const listCategories = () => async (dispatch) => {
@@ -49,3 +53,19 @@ export const FeaturedItems = () => async (dispatch) => {
         });
     }
 };
+
+export const listProducts = (keyword='',page=1) =>async(dispatch)=>{
+    try{
+        dispatch({type:PRODUCT_LIST_REQUEST})
+        const {data} =await axios.get(`http://127.0.0.1:8000/api/products/?keyword=${keyword}&page=${page}`)
+        dispatch({
+            type:PRODUCT_LIST_SUCCESS,
+            payload:data
+        })
+    }catch(error){
+        dispatch({
+            type:PRODUCT_LIST_FAIL,
+            payload:error.response && error.response.data.detail?error.response.data.detail:error.message,
+        })
+    }
+}

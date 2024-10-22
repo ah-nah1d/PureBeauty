@@ -1,6 +1,8 @@
 from django.contrib.auth.models import User
 from django.db import models
-from django.forms import ValidationError
+from django.utils.text import slugify
+import uuid
+
 
 class Category(models.Model):
     name = models.CharField(max_length=250, null=True, blank=True)
@@ -19,6 +21,7 @@ class Product(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True) 
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     name = models.CharField(max_length=250, null=True, blank=True)
+    slug = models.SlugField(unique=True,blank=True)
     image = models.ImageField(null=True, blank=True, default='/placeholder.png')
     brand = models.CharField(max_length=250, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
@@ -29,6 +32,12 @@ class Product(models.Model):
     createdAt = models.DateTimeField(auto_now_add=True)
     isFeatured = models.BooleanField(default=False)
     onSale = models.BooleanField(default=False)
+
+    def save(self, *args, **kwargs):
+        unique_slug = f"{slugify(self.name)}-{uuid.uuid4()}"
+        self.slug = unique_slug
+        super().save(*args, **kwargs)
+
 
     def __str__(self):
         return self.name
