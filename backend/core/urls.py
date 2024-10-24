@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/users/',include('store.api.urls.user_urls')),
     path('api/products/',include('store.api.urls.product_urls')),
+    path('api/orders/',include('store.api.urls.order_urls')),
     path('api/website/',include('website.api.urls')),
 ]
 
