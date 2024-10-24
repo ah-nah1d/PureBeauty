@@ -10,6 +10,8 @@ import {
 import {  
     userLoginReducer,
     userRegisterReducer,
+    userDetailsReducer,
+    userUpdateProfileReducer,
 } from './Reducers/UserReducer'
 import {  
     CategoryListReducer,
@@ -26,15 +28,19 @@ const reducer=combineReducers({
 
     userLogin:userLoginReducer,
     userRegister:userRegisterReducer,
+    userDetails:userDetailsReducer,
+    userUpdateProfile:userUpdateProfileReducer,
 
     categoryList:CategoryListReducer,
     featuredItems:FeaturedItemsReducer,
     productList:productListReducer,
+    
 })
 
 const userInfoFromStorage =localStorage.getItem('userInfo')?
     JSON.parse(localStorage.getItem('userInfo')):null
 
+    
 const initialState = {
 
     userLogin:{userInfo:userInfoFromStorage},
