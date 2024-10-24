@@ -17,6 +17,8 @@ import {
     CategoryListReducer,
     FeaturedItemsReducer,
     productListReducer,
+    productDetailsReducer,
+    productReviewCreateReducer,
 } from './Reducers/ProductReducer'
 
 
@@ -34,6 +36,8 @@ const reducer=combineReducers({
     categoryList:CategoryListReducer,
     featuredItems:FeaturedItemsReducer,
     productList:productListReducer,
+    productDetails:productDetailsReducer,
+    productReviewCreate:productReviewCreateReducer,
     
 })
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ImStarFull, ImStarHalf, ImStarEmpty } from 'react-icons/im';
 
-function Rating({ value, text, color = '#f8e825' }) {
+function Rating({ value,starSize='1rem',textSize='1rem', text, color = '#f8e825' }) {
     const renderStar = (starValue) => {
         let StarIcon; 
 
@@ -13,7 +13,7 @@ function Rating({ value, text, color = '#f8e825' }) {
         StarIcon = ImStarEmpty;
         }
 
-        return <StarIcon style={{ color }} />;
+        return <StarIcon color={color} size={starSize}/>;
     };
 
     return (
@@ -23,7 +23,7 @@ function Rating({ value, text, color = '#f8e825' }) {
         {renderStar(3)}
         {renderStar(4)}
         {renderStar(5)}
-        {text && <span className="ml-2 text-sm text-gray-700">{text}</span>}
+        {text && <span className="ml-2 text-gray-700"style={{ fontSize:textSize }}  >{text}</span>}
         </div>
     );
 }
