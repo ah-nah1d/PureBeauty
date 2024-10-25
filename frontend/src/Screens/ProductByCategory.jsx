@@ -1,23 +1,25 @@
 import React,{useEffect} from 'react'
 import { useDispatch,useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom';
 
 
 
-import NavBar from '../../Component/NavBar'
-import ItemCards from '../../Component/ItemCards'
-import Loader from '../../Component/Loader'
-import Message from '../../Component/Message'
-import Footer from '../../Component/Footer'
+import NavBar from '../Component/NavBar'
+import ItemCards from '../Component/ItemCards'
+import Loader from '../Component/Loader'
+import Message from '../Component/Message'
+import Footer from '../Component/Footer'
 
-import { listProducts } from '../../Actions/ProductActions'
+import { listProducts } from '../Actions/ProductActions'
 
 
-function Sale() {
+function ProductByCategory() {
     const dispatch =useDispatch()
+    const { id } = useParams();
         
     const productList = useSelector((state) => state.productList);
     const { loading, error, products } = productList;
-    const filteredProducts = products.filter(product => product.onSale === true);
+    const filteredProducts = products.filter(product => product.category === parseInt(id));
 
     useEffect(() => {
         dispatch(listProducts());
@@ -40,7 +42,7 @@ function Sale() {
                         ))
                     ) : (
                         <div className='flex items-center justify-center w-screen h-screen'>
-                            <div>Courrently no product is on Sale.</div>
+                            <div>No products found in this category.</div>
                         </div>
                     )
                 )}
@@ -50,4 +52,4 @@ function Sale() {
     )
 }
 
-export default Sale
+export default ProductByCategory

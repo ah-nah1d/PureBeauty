@@ -5,16 +5,16 @@ import { HashLink } from 'react-router-hash-link';
 import {FaChevronDown } from 'react-icons/fa';
 
 
-import Header from '../../Component/Header'
-import NavBar from '../../Component/NavBar'
-import Loader from '../../Component/Loader'
-import Message from '../../Component/Message'
-import BestDeals from '../../Component/BestDeals'
-import NewCollections from '../../Component/NewCollections'
-import ScrollLink from '../../Component/ScrollLink'
-import Footer from '../../Component/Footer'
+import Header from '../Component/Header'
+import NavBar from '../Component/NavBar'
+import Loader from '../Component/Loader'
+import Message from '../Component/Message'
+import BestDeals from '../Component/BestDeals'
+import NewCollections from '../Component/NewCollections'
+import ScrollLink from '../Component/ScrollLink'
+import Footer from '../Component/Footer'
 
-import { listCategories } from '../../Actions/ProductActions'
+import { listCategories } from '../Actions/ProductActions'
 
 function Home() {
     const [isOpen, setIsOpen] = useState(false);

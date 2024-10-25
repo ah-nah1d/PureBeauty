@@ -1,15 +1,17 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './Screens/Public/Home';
-import Login from './Screens/Public/Login';
-import Register from './Screens/Public/Register';
-import ProductByCategory from './Screens/Public/ProductByCategory'
-import ProductList from './Screens/Public/ProductList'
-import Product from './Screens/Public/Product'
-import Sale from './Screens/Public/Sale'
-import Profile from './Screens/Public/Profile'
-import Password from './Screens/Public/Password'
-import ShippingAddress from './Screens/Public/ShippingAddress'
-import Cart from './Screens/Public/Cart'
+import Home from './Screens/Home';
+import Login from './Screens/Login';
+import Register from './Screens/Register';
+import ProductByCategory from './Screens/ProductByCategory'
+import ProductList from './Screens/ProductList'
+import Product from './Screens/Product'
+import Sale from './Screens/Sale'
+import Profile from './Screens/Profile'
+import Password from './Screens/Password'
+import ShippingAddress from './Screens/ShippingAddress'
+import Cart from './Screens/Cart'
+import Shipping from './Screens/Shipping'
+import PaymentScreen from './Screens/Payment';
 
 
 function App() {
@@ -18,15 +20,16 @@ function App() {
             <Routes>
                 <Route path='/' element={<Home/>} exact/>
                 <Route path='/login' element={<Login/>} />
-                <Route path='/register' element={<Register/>} />
+                <Route path='/gister' element={<Register/>} />
                 <Route path='/products' element={<ProductList />} />
                 <Route path='/product/:slug' element={<Product />} />
                 <Route path="/cart/:id?" element={<Cart />} />
                 <Route path='/category/:id/:name' element={<ProductByCategory />} />
+                <Route path='/payment' element={<PaymentScreen />} />
                 <Route path='/sale' element={<Sale />} />
                 <Route path='/profile' element={<Profile/>} />
                 <Route path='/password' element={<Password/>} />
-                
+                <Route path='/shipping' element={<Shipping/>} />
                 <Route path='/shipping-address' element={<ShippingAddress/>} />
             </Routes>
         </Router>

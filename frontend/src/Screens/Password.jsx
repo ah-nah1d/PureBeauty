@@ -4,9 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FaShippingFast, FaUser } from "react-icons/fa";
 import { RiLockPasswordLine } from "react-icons/ri";
 
-import UserSideBar from '../../Component/UserSidebar';
-import { USER_UPDATE_PROFILE_RESET } from '../../Constants/UserConstants';
-import { getUserDetails, updateUserProfile } from '../../Actions/UserActions';
+import UserSideBar from '../Component/UserSidebar';
+import { USER_UPDATE_PROFILE_RESET } from '../Constants/UserConstants';
+import { getUserDetails, updateUserProfile } from '../Actions/UserActions';
 
 const menuItems = [
     { label: 'Profile', route: '/profile', icon: FaUser },

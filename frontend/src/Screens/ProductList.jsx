@@ -2,13 +2,13 @@ import React,{useEffect} from 'react'
 import { useDispatch,useSelector } from 'react-redux'
 
 
-import NavBar from '../../Component/NavBar'
-import ItemCards from '../../Component/ItemCards'
-import Loader from '../../Component/Loader'
-import Message from '../../Component/Message'
-import Footer from '../../Component/Footer'
+import NavBar from '../Component/NavBar'
+import ItemCards from '../Component/ItemCards'
+import Loader from '../Component/Loader'
+import Message from '../Component/Message'
+import Footer from '../Component/Footer'
 
-import { listProducts } from '../../Actions/ProductActions'
+import { listProducts } from '../Actions/ProductActions'
 
 
 function ProductList() {

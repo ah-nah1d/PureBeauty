@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate,useLocation } from 'react-router-dom';
-import NavBar from '../../Component/NavBar';
-import Rating from '../../Component/Rating';
-import Loader from '../../Component/Loader';
-import Message from '../../Component/Message';
-import ScrollLink from '../../Component/ScrollLink';
-import StarRating from '../../Component/StarRating'
-import { listProductDetails,createProductReview  } from '../../Actions/ProductActions'; //
-import { PRODUCT_CREATE_REVIEW_RESET } from '../../Constants/ProductConstants';
+import NavBar from '../Component/NavBar';
+import Rating from '../Component/Rating';
+import Loader from '../Component/Loader';
+import Message from '../Component/Message';
+import ScrollLink from '../Component/ScrollLink';
+import StarRating from '../Component/StarRating'
+import { listProductDetails,createProductReview  } from '../Actions/ProductActions'; //
+import { PRODUCT_CREATE_REVIEW_RESET } from '../Constants/ProductConstants';
 
 function Product() {
     const [rating, setRating] = useState(0);

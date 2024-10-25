@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams, useNavigate, useLocation } from 'react-router-dom';
-import Message from '../../Component/Message';
-import Footer from '../../Component/Footer'
-import NavBar from '../../Component/NavBar'
-import { addToCart,removeFromCart } from '../../Actions/CartActions'; 
+import Message from '../Component/Message';
+import Footer from '../Component/Footer'
+import NavBar from '../Component/NavBar'
+import { addToCart,removeFromCart } from '../Actions/CartActions'; 
 import { IoMdTrash } from "react-icons/io";
 
 
