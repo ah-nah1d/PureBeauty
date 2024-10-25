@@ -13,6 +13,7 @@ import Cart from './Screens/Cart'
 import Shipping from './Screens/Shipping'
 import Payment from './Screens/Payment';
 import PlaceOrder from './Screens/PlaceOrder';
+import Order from './Screens/Order';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
                 <Route path='/payment' element={<Payment />} />
                 <Route path='/placeorder' element={<PlaceOrder />} />
                 <Route path='/sale' element={<Sale />} />
+                <Route path='/order/:id' element={<Order />} />
                 <Route path='/profile' element={<Profile/>} />
                 <Route path='/password' element={<Password/>} />
                 <Route path='/shipping' element={<Shipping/>} />
