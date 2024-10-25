@@ -27,9 +27,9 @@ function NavBar() {
                 <ScrollLink to='/' className="flex-1 text-xl font-bold">PureBeauty</ScrollLink>
                 <div className="flex-1 flex justify-center"><Search /></div>
                 <div className="flex-1 flex justify-end space-x-4 items-center">
-                    <div className="flex items-center">
+                    <ScrollLink to='/cart' className="flex items-center">
                         <FaShoppingCart /> <span className="ml-1">Cart</span>
-                    </div>
+                    </ScrollLink>
                     {userInfo?(
                         <div className="relative">
                             <button

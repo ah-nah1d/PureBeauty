@@ -9,6 +9,7 @@ import Sale from './Screens/Public/Sale'
 import Profile from './Screens/Public/Profile'
 import Password from './Screens/Public/Password'
 import ShippingAddress from './Screens/Public/ShippingAddress'
+import Cart from './Screens/Public/Cart'
 
 
 function App() {
@@ -20,10 +21,12 @@ function App() {
                 <Route path='/register' element={<Register/>} />
                 <Route path='/products' element={<ProductList />} />
                 <Route path='/product/:slug' element={<Product />} />
+                <Route path="/cart/:id?" element={<Cart />} />
                 <Route path='/category/:id/:name' element={<ProductByCategory />} />
                 <Route path='/sale' element={<Sale />} />
                 <Route path='/profile' element={<Profile/>} />
                 <Route path='/password' element={<Password/>} />
+                
                 <Route path='/shipping-address' element={<ShippingAddress/>} />
             </Routes>
         </Router>

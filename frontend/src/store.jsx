@@ -20,6 +20,7 @@ import {
     productDetailsReducer,
     productReviewCreateReducer,
 } from './Reducers/ProductReducer'
+import { cartReducer } from './Reducers/CartReducer'
 
 
 const reducer=combineReducers({
@@ -27,6 +28,8 @@ const reducer=combineReducers({
     about: aboutReducer,
     social: socialReducer,
     contact:contactReducer,
+
+    cart:cartReducer,
 
     userLogin:userLoginReducer,
     userRegister:userRegisterReducer,
@@ -41,12 +44,17 @@ const reducer=combineReducers({
     
 })
 
+const cartItemFromStorage =localStorage.getItem('cartItems')?
+    JSON.parse(localStorage.getItem('cartItems')):[]
+
 const userInfoFromStorage =localStorage.getItem('userInfo')?
     JSON.parse(localStorage.getItem('userInfo')):null
 
     
 const initialState = {
-
+    cart:{
+        cartItems:cartItemFromStorage,
+    },
     userLogin:{userInfo:userInfoFromStorage},
 };
 
