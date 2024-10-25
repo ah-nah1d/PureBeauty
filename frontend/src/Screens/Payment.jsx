@@ -12,7 +12,7 @@ function Payment() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const [paymentMethod, setPaymentMethod] = useState('PayPal');
+    const [paymentMethod, setPaymentMethod] = useState('Cash On Delivery');
 
     useEffect(() => {
         if (!shippingAddress.address) {
@@ -40,14 +40,14 @@ function Payment() {
                         <div className="flex items-center space-x-4">
                             <input
                                 type="radio"
-                                id="paypal"
+                                id="Cash On Delivery"
                                 name="paymentMethod"
-                                value="PayPal"
-                                checked={paymentMethod === 'PayPal'}
+                                value="Cash On Delivery"
+                                checked={paymentMethod === 'Cash On Delivery'}
                                 onChange={(e) => setPaymentMethod(e.target.value)}
                                 className="w-4 h-4 text-purple-600 border-gray-300 focus:ring-purple-500"
                             />
-                            <label htmlFor="paypal" className="text-gray-700 text-lg">
+                            <label htmlFor="Cash On Delivery" className="text-gray-700 text-lg">
                                 Cash On Delivery
                             </label>
                         </div>

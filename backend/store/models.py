@@ -73,19 +73,10 @@ class OrderItem(models.Model):
 
 
 class ShippingAddress(models.Model):
-    REGION_CHOICES = [
-        ('Barishal', 'Barishal'),
-        ('Chattogram', 'Chattogram'),
-        ('Dhaka', 'Dhaka'),
-        ('Khulna', 'Khulna'),
-        ('Mymensingh', 'Mymensingh'),
-        ('Rajshahi', 'Rajshahi'),
-        ('Rangpur', 'Rangpur'),
-        ('Sylhet', 'Sylhet'),
-    ]
     order = models.OneToOneField(Order,on_delete=models.PROTECT,null=True) 
     address = models.CharField(max_length=250,null=True,blank=True)
-    region = models.CharField(max_length=250, choices=REGION_CHOICES, null=True, blank=True)
+    city = models.CharField(max_length=250,null=True,blank=True)
+    country = models.CharField(max_length=250,null=True,blank=True)
     postalCode = models.CharField(max_length=250,null=True,blank=True)
 
     def __str__(self):

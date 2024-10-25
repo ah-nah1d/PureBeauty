@@ -22,6 +22,15 @@ import {
 } from './Reducers/ProductReducer'
 import { cartReducer } from './Reducers/CartReducer'
 
+import { 
+    orderCreateReducer,
+    orderDetailsReducer,
+    orderPayReducer,
+    orderListMyReducer,
+    orderListReducer,
+    orderDeliverReducer,
+} from './Reducers/OrderReducer'
+
 
 const reducer=combineReducers({
     header: headerReducer,
@@ -41,6 +50,14 @@ const reducer=combineReducers({
     productList:productListReducer,
     productDetails:productDetailsReducer,
     productReviewCreate:productReviewCreateReducer,
+
+
+    orderCreate:orderCreateReducer,
+    orderDetails:orderDetailsReducer,
+    orderPay:orderPayReducer,
+    orderListMy:orderListMyReducer,
+    orderList:orderListReducer,
+    orderDeliver:orderDeliverReducer,
     
 })
 

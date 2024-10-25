@@ -11,7 +11,8 @@ import Password from './Screens/Password'
 import ShippingAddress from './Screens/ShippingAddress'
 import Cart from './Screens/Cart'
 import Shipping from './Screens/Shipping'
-import PaymentScreen from './Screens/Payment';
+import Payment from './Screens/Payment';
+import PlaceOrder from './Screens/PlaceOrder';
 
 
 function App() {
@@ -20,12 +21,13 @@ function App() {
             <Routes>
                 <Route path='/' element={<Home/>} exact/>
                 <Route path='/login' element={<Login/>} />
-                <Route path='/gister' element={<Register/>} />
+                <Route path='/register' element={<Register/>} />
                 <Route path='/products' element={<ProductList />} />
                 <Route path='/product/:slug' element={<Product />} />
                 <Route path="/cart/:id?" element={<Cart />} />
                 <Route path='/category/:id/:name' element={<ProductByCategory />} />
-                <Route path='/payment' element={<PaymentScreen />} />
+                <Route path='/payment' element={<Payment />} />
+                <Route path='/placeorder' element={<PlaceOrder />} />
                 <Route path='/sale' element={<Sale />} />
                 <Route path='/profile' element={<Profile/>} />
                 <Route path='/password' element={<Password/>} />

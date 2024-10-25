@@ -16,12 +16,12 @@ function Shipping() {
     const [address, setAddress] = useState(shippingAddress.address);
     const [city, setCity] = useState(shippingAddress.city);
     const [postalCode, setPostalCode] = useState(shippingAddress.postalCode);
-    const [division, setDivision] = useState(shippingAddress.country);
+    const [country, setCountry] = useState(shippingAddress.country);
     const navigate = useNavigate();
 
     const submitHandler = (e) => {
         e.preventDefault();
-        dispatch(saveShippingAddress({ address, city, postalCode, division }));
+        dispatch(saveShippingAddress({ address, city, postalCode, country }));
         navigate('/payment');
     };
 
@@ -34,11 +34,11 @@ function Shipping() {
                     <h1 className="text-3xl  font-semibold text-center text-gray-800 mb-6">Shipping Address</h1>
                     <form onSubmit={submitHandler} className="space-y-6">
                     <div>
-                            <label htmlFor="division" className="block mb-1 font-semibold text-gray-700">Division</label>
+                            <label htmlFor="country" className="block mb-1 font-semibold text-gray-700">Division</label>
                             <select
                                 required
-                                value={division}
-                                onChange={(e) => setDivision(e.target.value)}
+                                value={country}
+                                onChange={(e) => setCountry(e.target.value)}
                                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 outline-none"
                             >
                                 <option value="" disabled>Select Division</option>
